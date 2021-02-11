@@ -1,6 +1,7 @@
 {
-  "name": "svelte-app",
+  "name": "pwakit",
   "version": "1.0.0",
+  "description": "Basic tool for converting SVG (PNG) image to several PNG images of different sizes.",: ,
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
