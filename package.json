@@ -1,11 +1,16 @@
 {
   "name": "pwakit",
   "version": "1.0.0",
-  "description": "Basic tool for converting SVG (PNG) image to several PNG images of different sizes.",: ,
+  "description": "Basic tool for converting SVG (PNG) image to several PNG images of different sizes.",
+  "license": "MIT",
   "scripts": {
+    "build.docs":"$npm_execpath run clean; $npm_execpath run build; $npm_execpath run clean.docs; cp -r public docs;",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "sirv public",
+    "clean": "rm -rf public/build",
+    "clean.docs": "rm -rf docs/",
+    "clean.node": "rm -rf node_modules"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
