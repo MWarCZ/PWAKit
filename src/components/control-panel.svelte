@@ -39,6 +39,7 @@
     grid-gap: 1rem;
 
     border: var(--input-border);
+    border-radius: 0.3rem;
     padding: 1rem;
     margin: 1rem auto;
 

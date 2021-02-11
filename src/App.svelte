@@ -12,9 +12,9 @@
 </script>
 
 <header>
-  <h1>Iconer</h1>
+  <h1>PWAKit</h1>
   <p>
-    Tool for convert SVG to multiple PNG with different sizes.
+    Basic tool for converting SVG (PNG) image to several PNG images of different sizes.
   </p>
 </header>
 
@@ -36,7 +36,6 @@
     box-sizing: border-box;
   }
   :root {
-    font-size: 15px;
 
     /* Button: Background */
     --btn-bg: #dfdfdfcc;
@@ -62,12 +61,28 @@
     --form-font-size-primary: 1.5em;
     --form-font-size-secondary: 1.25em;
 
+    /* Custom scrollbar */
+    --scrolbar-border-size: 0.2em;
+
   }
   /* Body */
   :global(body) {
+    font-family: cursive;
     font-size: 20px;
     background-color: cornflowerblue;
+    display: grid;
+    justify-content: center;
+    margin: 0;
   }
+
+  header {
+    border: 1px solid;
+    text-align: center;
+    width: 50rem;
+    background-color: #fff9;
+    border-radius: 0 0 0.3rem 0.3rem;
+  }
+
 
   /* Button  */
   :global(.btn) {
@@ -120,6 +135,34 @@
     color: var(--input-fg-focus);
     background-color: var(--input-bg-focus);
     --input-border: 2px solid #000;
+  }
+
+  /* Custom scrollbar */
+  :global(.scrollbar) {
+    /* Firefox only */
+    scrollbar-color: #0008 #fff5;
+  }
+  :global(.scrollbar::-webkit-scrollbar) {
+    width: 1em;height: 1em;
+    border: var(--scrolbar-border-size) solid #fffa;
+    background: #fff5;
+    border-radius: 0.5em;
+  }
+  :global(.scrollbar::-webkit-scrollbar-track) {
+    border-radius: 0.5em;
+  }
+  :global(.scrollbar::-webkit-scrollbar-thumb) {
+    border: var(--scrolbar-border-size) solid #000a;
+    border-radius: 0.5em;
+    background: #0005;
+    transition: 1.5s background, 1.5s border;
+  }
+  :global(.scrollbar::-webkit-scrollbar-thumb:hover) {
+    background: #0008;
+    border: var(--scrolbar-border-size) solid #000f;
+  }
+  :global(.scrollbar::-webkit-scrollbar-corner) {
+    background: transparent;
   }
 
   /* ========================= */

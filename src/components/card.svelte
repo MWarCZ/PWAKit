@@ -42,7 +42,7 @@ function refreshCanvas() {
 
 <div class="card">
   <a class="btn" href={link} download={fullname}>{size}</a>
-  <div>
+  <div class="scrollbar">
     <canvas bind:this={canvas}
       width={size}
       height={size}
