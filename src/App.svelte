@@ -14,7 +14,7 @@
 <header>
   <h1>PWAKit</h1>
   <p>
-    Basic tool for converting SVG (PNG) image to several PNG images of different sizes.
+    Basic tool for&nbsp;converting SVG/PNG image to&nbsp;several PNG images of&nbsp;different sizes.
   </p>
 </header>
 
@@ -71,18 +71,23 @@
     font-size: 20px;
     background-color: cornflowerblue;
     display: grid;
-    justify-content: center;
+    justify-items: center;
     margin: 0;
   }
 
   header {
     border: 1px solid;
     text-align: center;
-    width: 50rem;
+    max-width: 52rem;
     background-color: #fff9;
     border-radius: 0 0 0.3rem 0.3rem;
   }
-
+  header > h1 {
+    margin: 0.5em 0 0 0;
+  }
+  header > p {
+    margin: 0.5em 1em 1em 1em;
+  }
 
   /* Button  */
   :global(.btn) {

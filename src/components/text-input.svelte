@@ -1,13 +1,14 @@
 <script>
+  import { unselectOnFocus } from './actions'
 
   export let label = 'Naming:'
   export let value = 'logo@#'
 
 </script>
 
-<div class="wrapper">
+<div class="wrapper" style={$$props.style}>
   <span>{label}</span>
-  <input type="text" class="input" bind:value />
+  <input type="text" class="input" bind:value use:unselectOnFocus />
 </div>
 
 <style>

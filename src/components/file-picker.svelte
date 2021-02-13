@@ -48,7 +48,7 @@
 
 </script>
 
-<div class="wrapper">
+<div class="wrapper" style={$$props.style}>
   <span>{label}</span>
   <div class="input">
     <img bind:this={image} src="" alt="source_image" />
@@ -82,11 +82,15 @@
     display: flex;
     height: 100%;
     overflow: auto;
+    position: relative;
   }
   .wrapper > div > img {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
   }
   .wrapper > label {
     grid-area: button;
