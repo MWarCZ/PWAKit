@@ -11,6 +11,8 @@
   /**@type number[]*/
   export let sizes = []
 
+  const defaultSizesValue = `16\n32\n48\n72\n96\n128\n144\n168\n192 #Recommend Manifest \n256\n384\n512 #Recommend Manifest \n`
+
   /**
    * @param event {CustomEvent<{sizes:number[]}>}
    */
@@ -22,10 +24,11 @@
 </script>
 
 <form class="controls" onsubmit="return false">
-  <FilePicker bind:image />
-  <TextInput bind:value={basename} />
+  <TextInput bind:value={basename} style="grid-area: name;" />
+  <FilePicker bind:image style="grid-area: file;" />
   <SizesArea on:convert={handleConvert}
-    value={'16\n32\n64\n128\n256'}
+    value={defaultSizesValue}
+    style="grid-area: sizes;"
   />
 </form>
 
@@ -33,9 +36,9 @@
 
   .controls {
     display: grid;
-    grid-template-areas: "file name" "file sizes";
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-areas: "name sizes" "file sizes";
+    grid-template-rows: min-content auto;
+    grid-template-columns: 1.25fr 1fr;
     grid-gap: 1rem;
 
     border: var(--input-border);
@@ -45,18 +48,9 @@
 
     background-color: #fff8;
 
-    height: 30rem;
-    width: 40rem;
+    /* min-height: 30rem; */
+    max-width: 35rem;
     overflow: hidden;
-  }
-  .controls > :global(:nth-child(1)) {
-    grid-area: file;
-  }
-  .controls > :global(:nth-child(2)) {
-    grid-area: name;
-  }
-  .controls > :global(:nth-child(3)) {
-    grid-area: sizes;
   }
 
 </style>

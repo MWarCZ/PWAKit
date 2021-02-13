@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte'
+  import { unselectOnFocus } from './actions'
 
   const dispatch = createEventDispatcher()
 
@@ -10,7 +11,7 @@
   function convertTextToSizes(text = '') {
     return text
       .split('\n')
-      .map(value => Number(value))
+      .map(value => Number.parseInt(value))
       .filter(value => !!value);
   }
 
@@ -20,11 +21,9 @@
   }
 </script>
 
-<div class="wrapper">
+<div class="wrapper" style={$$props.style}>
   <span>{label}</span>
-  <textarea class="input"
-    bind:value={value}
-  ></textarea>
+  <textarea class="input" bind:value use:unselectOnFocus ></textarea>
   <button class="btn" on:click={handleConvert}>{button}</button>
 </div>
 
@@ -48,6 +47,7 @@
   }
   .wrapper > textarea {
     grid-area: input;
+    white-space: nowrap;
   }
 
 </style>
