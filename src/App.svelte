@@ -67,7 +67,7 @@
   }
   /* Body */
   :global(body) {
-    font-family: cursive;
+    font-family: cursive, sans-serif;
     font-size: 20px;
     background-color: cornflowerblue;
     display: grid;
